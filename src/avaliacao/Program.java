@@ -10,6 +10,8 @@ public class Program {
 		while (true) {
 			System.out.println("Digite sua opção ou 0 para cancelar");
 			System.out.println("Digite 1 para cadastrar cliente");
+			System.out.println("Digite 2 para gerar a consulta");
+			System.out.println("Digite 3 para dados do exame");
 			op = scan.nextInt();
 			if (op == 0) {
 				break;
@@ -53,6 +55,39 @@ public class Program {
 				cliente.Cadastrar(nomeResp, telefone, rua, bairro, cep, numero, complemento, pagamento, nomeCrianca, idade, altura);
 				break;
 			}
+			
+			case 2: {
+				Consulta consulta = new Consulta();
+				System.out.println("Digite 1 para agendar, 2 para cancelar, 3 para reagendar ou 4 para confirmar");
+				int statusConsulta = scan.nextInt();
+				if (statusConsulta == 4) {
+					consulta.status = "confirmada";
+				}else if (statusConsulta == 1) {
+					consulta.status = "Agendada";
+				}else if (statusConsulta == 2) {
+					consulta.status = "Cancelada";
+				}else if (statusConsulta == 3) {
+					consulta.status = "Reagendada";
+				}else {
+					System.out.println("Comando inválido");
+				}
+				break;
+			}
+			
+			case 3: {
+				Exame exame = new Exame();
+				System.out.println("Medicamentos:");
+				String medicamento = scan.next();
+				exame.AddMedicamento(medicamento);
+				System.out.println("Vacinas:");
+				String vacina = scan.next();
+				exame.AddVacinas(vacina);
+				System.out.println("Encaminhamentos:");
+				String encaminhamento = scan.next();
+				exame.AddEncaminhamentos(encaminhamento);
+				break;
+			}
+			
 			default:
 				throw new IllegalArgumentException("Unexpected value: " + op);
 			}
