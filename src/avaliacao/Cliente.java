@@ -4,7 +4,7 @@ public class Cliente {
 	String nomeResp;
 	String telefone;
 	Crianca crianca;
-	Endereco endereco;
+	private Endereco endereco;
 	Pagamento pagamento;
 
 	Cliente() {
@@ -15,9 +15,9 @@ public class Cliente {
 		this.nomeResp = nomeResp;
 		this.telefone = telefone;
 		this.crianca = new Crianca();
-		this.crianca.nomeCrianca = nomeCrianca;
-		this.crianca.idade = idade;
-		this.crianca.altura = altura;
+		this.crianca.setNomeCrianca(nomeCrianca);
+		this.crianca.setIdade(idade);
+		this.crianca.setAltura(altura);
 		this.endereco = new Endereco();
 		this.endereco.rua = rua;
 		this.endereco.bairro = bairro;

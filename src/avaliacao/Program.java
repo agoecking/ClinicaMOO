@@ -44,7 +44,7 @@ public class Program {
 				String soun = scan.next();
 				Pagamento pagamento = new Pagamento();
 				if (soun.equalsIgnoreCase("s")) {
-					pagamento.isPlano = true;
+					pagamento.setPlano(true);
 					System.out.println("Insira o nome do plano");
 					String nomePlano = scan.next();
 					System.out.println("Insira o numero do plano");

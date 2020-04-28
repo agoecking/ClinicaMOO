@@ -1,17 +1,20 @@
 package avaliacao;
 
 public class Pagamento {
-	boolean isPlano = true;
+	private boolean isPlano = true;
 	Plano plano;
 	
 	public void CadastraPlano(String nomePlano, String numeroPlano) {
-		if (isPlano) {
+		if (isPlano()) {
 			this.plano = new Plano();
-			this.plano.nomePlano = nomePlano;
-			this.plano.numeroPlano = numeroPlano;
+			this.plano.setNomePlano(nomePlano);
+			this.plano.setNumeroPlano(numeroPlano);
 		}
 	}
 	public boolean isPlano() {
 		return this.isPlano;
+	}
+	public void setPlano(boolean isPlano) {
+		this.isPlano = isPlano;
 	}
 }
